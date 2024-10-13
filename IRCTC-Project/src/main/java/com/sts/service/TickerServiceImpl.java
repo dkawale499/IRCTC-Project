@@ -36,4 +36,23 @@ public class TickerServiceImpl implements TicketService {
 		
 	}
 
+	@Override
+	public Ticket deleteTicket(Integer tid) {
+		// TODO Auto-generated method stub
+		repo.deleteById(tid);
+		return null;
+		
+	}
+
+	@Override
+	public Ticket updateTicket(Integer upid) {
+		// TODO Auto-generated method stub
+		
+		
+		repo.findById(upid).orElseThrow();
+		return null;
+	}
+
+	
+
 }

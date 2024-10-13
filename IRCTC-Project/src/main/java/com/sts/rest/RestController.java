@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -45,4 +47,16 @@ public class RestController {
 		List<Ticket> Tickets = service.getAllTickets();
 		return new ResponseEntity<>(Tickets,HttpStatus.OK);
 		}
+	
+	@DeleteMapping("tdelete/{tid},")
+	public ResponseEntity<Ticket>deleteTicket(@PathVariable Integer tid ){
+		Ticket delete = service.deleteTicket(tid);
+		return new ResponseEntity<>(delete,HttpStatus.OK);
+	}
+	@PatchMapping("tup/{tid}"
+			)
+	public ResponseEntity<Ticket>updateTicket(Integer tid ){
+		Ticket update = service.updateTicket(tid);
+		return new ResponseEntity<>(update,HttpStatus.OK);
+	}
 }

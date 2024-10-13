@@ -9,4 +9,8 @@ public interface TicketService {
 	public Ticket getTicket(Integer ticketId);
 	
 	public List<Ticket>getAllTickets();
+	
+	public Ticket deleteTicket(Integer tid);
+	
+	public Ticket updateTicket(Integer upid);
 }
